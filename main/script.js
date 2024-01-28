@@ -1,28 +1,31 @@
 document.addEventListener("DOMContentLoaded",function(){
 
-let myLibrary = [];
+    const myLibrary=[];
 
-function Book(title,author,pages,read){
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
+    function Book(title,author,pages,read){
+        this.title=title;
+        this.author=author;
+        this.pages=pages;
+        this.read=read;
    
 
-}
-Book.prototype.toggleRead =function(){
-    this.read = !this.read;
-}
-function toggleRead(index){
-    myLibrary[index].toggleRead();
-    render()
-}
-
-function render(){
-    let libraryEl = document.querySelector('#library');
-    libraryEl.innerHTML = "";
-    for (let i = 0; i< myLibrary.length; i++){
-        let book = myLibrary[i];
+    }
+    Book.prototype.toggleRead = function(){
+        this.read = !this.read;
+    }
+    function toggleRead(index){
+        myLibrary[index].toggleRead();
+        render()
+    }
+    function removeBook(index){
+        myLibrary.splice(index,1);
+        render()
+    }
+    function render(){
+        let libraryEl = document.querySelector('#library');
+        libraryEl.innerHTML = "";
+        for(let i = 0; i<myLibrary.length;i++){
+            let book = myLibrary[i];
         let bookEl=document.createElement("div");
         bookEl.classList.add("card-container");
 
@@ -68,41 +71,29 @@ function render(){
         buttonWrapper.appendChild(removeBtn);
         buttonWrapper.appendChild(toggleReadBtn);
         libraryEl.appendChild(bookEl);
-
+        }
     }
-    
-}
 
-function removeBook(index){
-    myLibrary.splice(index,1);
-    render()
-}
+    function addBookToLibrary(){
+        this.title=document.querySelector('#title').value;
+        this.author=document.querySelector('#author').value;
+        this.pages=document.querySelector('#pages').value;
+        this.read=document.querySelector('#read').checked;
+        
+        let newBook = new Book(title,author,pages,read);
+        myLibrary.push(newBook);
+        render()
+    }
 
-function addBookToLibrary(){
-    this.title=document.querySelector('#title').value;
-    this.author=document.querySelector('#author').value;
-    this.pages=document.querySelector('#pages').value;
-    this.read=document.querySelector('#read').checked;
+    let newBookBtn = document.querySelector('#new-book-btn');
+    newBookBtn.addEventListener("click",function(){
+        let newBookForm = document.querySelector('#new-book-form');
+        newBookForm.style.display = "flex";
+    })
 
-    let newBook = new Book (title,author,pages,read);
-    myLibrary.push(newBook);
-    render()
-}
-
-let newBookbtn = document.querySelector('#new-book-btn');
-newBookbtn.addEventListener("click",function(){
-    let newBookForm= document.querySelector("#new-book-form");
-    console.log(newBookForm);
-    newBookForm.style.display = "flex";
-})
-
-document.querySelector("#new-book-form").addEventListener("submit",function(event){
-    event.preventDefault();
-    addBookToLibrary();
-})
+    document.querySelector('#new-book-form').addEventListener("submit",function(event){
+        event.preventDefault();
+        addBookToLibrary()
+    })
 
 })
-function removeBook(index){
-    myLibrary.splice(index,1);
-    render()
-}
