@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: linear-gradient(to right, black, #0ea5e9);
+    margin:0;
+    padding:0;
+}
+#new-book-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:2%;
+}
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+}
+#new-book-btn{
+    width:15%;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size:30px;
+    border-radius:20px;
+    background-color: #0ea5e9;
+    color:white;
+    padding:5px;
+    border-color:transparent;
+}
+#title,#author,#pages{
+    border-radius:20px;
+    padding:4px;
+    margin-top:10px;
+    border: transparent;
+}
+label{
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size:25px;
+    margin-top:10px;
+}
+#new-book-form{
+    position: relative;
+    border:1px solid black;
+    width:25%;
+    height:50%;
+    left:37%;
+    background-color: #0ea5e9;
+    border-radius:30px;
+    color:white;
+    border:transparent;
+}
+.read-wrapper{
+    display: flex;
+    margin-top:10px;
+    flex-direction: column;
+}
+.add-book-btn-wrapper{
+    margin-top:20px;
+    margin-bottom:15px;
+}
+.add-book-btn{
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size:20px;
+    width:180px;
+    border-radius:20px;
+    padding:4px;
+    font-weight:600;
+    border:transparent;
+    background-color: white;
+    color:black;
+}
+.add-book-btn:hover{
+    color:#0ea5e9;
+}
+.card-title{
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size:30px;
+}
+.card-author{
+    font-size:25px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.card-pages{
+    font-family: "Yanone Kaffeesatz", sans-serif; 
+    font-size:20px;
+}
+.card-read{
+    font-family: "Yanone Kaffeesatz", sans-serif; 
+    font-size:20px;
+    font-weight: 500;
+    color:red;
+}
+.card-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:20px;
+    height:20vh;
+    width:40%;
+    background-image: url('https://i.ibb.co/dKh5Qbh/book.png');
+    background-size: cover;
+    background-size: 200% 200%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.buttonWrapper{
+    display:flex;
+    flex-direction: row;
+    
+}
+.button-wrapper .card-remove-btn{
+    margin-right:10px;
+    border:transparent;
+    font-family: "Yanone Kaffeesatz", sans-serif; 
+    font-weight:700;
+    font-size: 20px;
+    background-color: transparent;
+}
+.button-wrapper .card-toggle-read-btn{
+    margin-left:10px;
+    border:transparent;
+    font-family: "Yanone Kaffeesatz", sans-serif; 
+    font-weight:700;
+    font-size: 20px;
+    background-color: transparent;
+}
+.card-toggle-read-btn:hover,
+.card-remove-btn:hover {
+    color: green;
+}
+.library{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(4,20%);
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+    left:4.3%;
+    margin-top:100px;
+    row-gap:100px;
+}
+
